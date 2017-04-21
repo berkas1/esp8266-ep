@@ -145,7 +145,7 @@ void setup() {
       delay(10);
       String json = String("{\"temp_c\": ") + String(tempData.temperature_c) +
         + ", \"humidity\": " + String(tempData.humidity) + String("}");
-      server.send(200, "text/plain", json);
+      server.send(200, "application/json", json);
       #ifdef PRINT_DEBUG_MESSAGES
         Serial.println(String("webserver request /json"));
       #endif
@@ -161,7 +161,7 @@ void setup() {
       String xml = String("<data>") + "<temp_c>" + String(tempData.temperature_c) +
         "</temp_c>" + "<humidity>" + String(tempData.humidity) + "</humidity>" +
         "</data>";
-      server.send(200, "text/plain", xml);
+      server.send(200, "application/xml", xml);
       #ifdef PRINT_DEBUG_MESSAGES
         Serial.println(String("webserver request /xml"));
       #endif
