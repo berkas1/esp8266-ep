@@ -19,6 +19,9 @@
 const char* ssid = "";
 const char* password = "";
 
+// DHT Sensor pin. Default is D2
+const int DHTPin = D2;
+
 // interval for sending data to cloud service. Default = 20 seconds
 const long sendInterval = 20000;
 
@@ -36,9 +39,6 @@ data tempData;
 
 // Web Server on port 80
 ESP8266WebServer server(80);
-
-// DHT Sensor
-const int DHTPin = D2;
 
 // Initialize DHT sensor.
 DHT dht(DHTPin, SENSORTYPE);
